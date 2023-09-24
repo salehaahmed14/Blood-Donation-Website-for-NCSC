@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>NCSC - Contact Us</title>
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="{% static 'assets/fonts/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/aos.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Banner-Heading-Image-images.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/cards-d_style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/dh-card-image-left-dark.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Footer-with-social-media-icons.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="{% static 'assets/css/login-form---Ambrodu-login.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/login-form---Ambrodu.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/login-full-page-bs4.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Navbar-With-Button-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Pretty-Footer-.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Simple-Slider-Simple-Slider.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Simple-Vertical-Navigation-Menu-v-10.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Slider_Carousel_webalgustocom-animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Slider_Carousel_webalgustocom-slider.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Slider_Carousel_webalgustocom.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Swipe-Slider-9-Swipe-Slider-9.css' %}">
+</head>
+
+<body>
+    <section>
+        <div class = 'container'>
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            {% block content %}{% endblock %}
+        </div>    
+        <nav class="navbar navbar-light navbar-expand-md py-3" data-aos="slide-down" data-aos-once="true" style="background: #FFF5E4;z-index: 2;position: sticky;">
+            <div class="container"><a class="navbar-brand d-flex align-items-center" data-aos="fade-right" data-aos-delay="250" data-aos-once="true" href="{% url 'home' %}"><img width="53" height="48" src="{% static 'assets/img/ncsc%20copy.png' %}"><span class="fs-3 fw-semibold" style="color: #11468F;">NCSC</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link active fs-5 fw-normal" href="{% url 'home' %}" style="color:var(--bs-red);">Home</a></li>
+                        <li class="nav-item"><a class="nav-link fs-5" href="{% url 'Contact Us' %}" style="color:var(--bs-red);">Contact Us</a></li>
+                        <li class="nav-item"><a class="nav-link fs-5" href="{% url 'About Us' %}" style="color:var(--bs-red);">About Us</a></li>
+                        <li class="nav-item"></li>
+                        <li class="nav-item"></li>
+                    </ul>
+                    {% if request.user.is_authenticated %}
+                    <button class="btn btn-primary btn-lg fs-5 fw-semibold" id="signup-btn" onclick="location.href='logout/'" type="button" style="margin-right:9px;">LogOut</button>
+                    <label for="username" style="background-color: #2b3467; padding-right: 1vw;">
+                        <h4 style="color: #fff;">{{ request.user.username }}</h4>
+                    </label>
+                    {% else %}    
+                    <button class="btn btn-primary btn-lg fs-5 fw-semibold" id="signup-btn" onclick="location.href='register/'" type="button" style="margin-right:9px;">SignUp</button>
+                    <button class="btn btn-primary btn-lg fs-5 fw-normal" id="login-btn" onclick="location.href='login/'" type="button">Login</button>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+    </section>
+    <section>
+        <div><img data-aos="zoom-in" data-aos-once="true" src="{% static 'assets/img/contact%20donation.jpg' %}" width="1197" height="392" style="width: 100%;height: 600px;z-index: -2;">
+            <div class="container" data-aos="zoom-out" data-aos-once="true" style="margin-top: -121px;padding-left: 170px;padding-right: 187px;background: #fff5e4;border: 10px groove #2b3467;z-index: 2;position: relative;">
+                <div>
+                    <h1 style="color: #eb1d36;">Contact Us</h1>
+                    <p style="color: #2b3467;">You can easily contact us through the following platforms:</p>
+                </div>
+                <div>
+                    <div class="row">
+                        <div class="col-lg-1">
+                            <div class="bs-icon-xl bs-icon-circle bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-2 bs-icon lg" style="background: #eb1d36;margin-right: -1px;padding-right: 0px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="font-size: 40px;">
+                                    <path d="M22 12C22 10.6868 21.7413 9.38647 21.2388 8.1731C20.7362 6.95996 19.9997 5.85742 19.0711 4.92896C18.1425 4.00024 17.0401 3.26367 15.8268 2.76123C14.6136 2.25854 13.3132 2 12 2V4C13.0506 4 14.0909 4.20703 15.0615 4.60889C16.0321 5.01099 16.914 5.60034 17.6569 6.34326C18.3997 7.08594 18.989 7.96802 19.391 8.93848C19.7931 9.90918 20 10.9495 20 12H22Z" fill="currentColor"></path>
+                                    <path d="M2 10V5C2 4.44775 2.44772 4 3 4H8C8.55228 4 9 4.44775 9 5V9C9 9.55225 8.55228 10 8 10H6C6 14.4182 9.58173 18 14 18V16C14 15.4478 14.4477 15 15 15H19C19.5523 15 20 15.4478 20 16V21C20 21.5522 19.5523 22 19 22H14C7.37259 22 2 16.6274 2 10Z" fill="currentColor"></path>
+                                    <path d="M17.5433 9.70386C17.8448 10.4319 18 11.2122 18 12H16.2C16.2 11.4485 16.0914 10.9023 15.8803 10.3928C15.6692 9.88306 15.3599 9.42017 14.9698 9.03027C14.5798 8.64014 14.1169 8.33081 13.6073 8.11963C13.0977 7.90869 12.5515 7.80005 12 7.80005V6C12.7879 6 13.5681 6.15527 14.2961 6.45679C15.024 6.7583 15.6855 7.2002 16.2426 7.75732C16.7998 8.31445 17.2418 8.97583 17.5433 9.70386Z" fill="currentColor"></path>
+                                </svg></div>
+                        </div>
+                        <div class="col-lg-8 col-xl-11" style="padding-left: 38px;">
+                            <h2 style="color: #eb1d36;">Call us now!</h2>
+                            <p style="color: #2b3467;">+92 337 8612868</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-1" style="justify-items: center;align-items: center;align-content: center;justify-content: center;margin-right: 26px;">
+                            <div class="bs-icon-xl bs-icon-circle bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-2 bs-icon lg" style="background: #eb1d36;padding-top: 0px;margin-top: 22px;"><i class="icon ion-ios-email-outline" style="font-size: 66px;"></i></div>
+                        </div>
+                        <div class="col">
+                            <h2 style="color: #eb1d36;">Email</h2>
+                            <p style="color: #2b3467;">Faculty Sponsor – Dr. Abida Ayesha: <a href="#"></a><a href="mailto:abida.ayesha@smme.nust.edu.pk?" target="_blank" rel="noopener noreferrer">abida.ayesha@smme.nust.edu.pk</a><a href="#"></a></p>
+                            <p style="color: #2b3467;">Assistant Manager – Maheen Mumtaz:&nbsp;<a href="#">maheen.mumtaz@smme.edu.pk</a></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-1" style="margin-right: 26px;">
+                            <div class="bs-icon-xl bs-icon-circle bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-2 bs-icon lg" style="background: #eb1d36;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="font-size: 40px;">
+                                    <path d="M17.6569 16.6569C16.7202 17.5935 14.7616 19.5521 13.4138 20.8999C12.6327 21.681 11.3677 21.6814 10.5866 20.9003C9.26234 19.576 7.34159 17.6553 6.34315 16.6569C3.21895 13.5327 3.21895 8.46734 6.34315 5.34315C9.46734 2.21895 14.5327 2.21895 17.6569 5.34315C20.781 8.46734 20.781 13.5327 17.6569 16.6569Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M15 11C15 12.6569 13.6569 14 12 14C10.3431 14 9 12.6569 9 11C9 9.34315 10.3431 8 12 8C13.6569 8 15 9.34315 15 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg></div>
+                        </div>
+                        <div class="col">
+                            <h2 style="color: #eb1d36;">Location</h2>
+                            <p style="color: #2b3467;">Scholars Ave, H-12, Islamabad, Islamabad Capital Territory</p>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 6px;">
+                        <div class="col-xl-1" style="margin-right: 23px;">
+                            <div class="bs-icon-xl bs-icon-circle bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-2 bs-icon lg" style="background: #eb1d36;padding-top: 0px;margin-top: 75px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="font-size: 40px;">
+                                    <path d="M22 12C22 10.6868 21.7413 9.38647 21.2388 8.1731C20.7362 6.95996 19.9997 5.85742 19.0711 4.92896C18.1425 4.00024 17.0401 3.26367 15.8268 2.76123C14.6136 2.25854 13.3132 2 12 2V4C13.0506 4 14.0909 4.20703 15.0615 4.60889C16.0321 5.01099 16.914 5.60034 17.6569 6.34326C18.3997 7.08594 18.989 7.96802 19.391 8.93848C19.7931 9.90918 20 10.9495 20 12H22Z" fill="currentColor"></path>
+                                    <path d="M2 10V5C2 4.44775 2.44772 4 3 4H8C8.55228 4 9 4.44775 9 5V9C9 9.55225 8.55228 10 8 10H6C6 14.4182 9.58173 18 14 18V16C14 15.4478 14.4477 15 15 15H19C19.5523 15 20 15.4478 20 16V21C20 21.5522 19.5523 22 19 22H14C7.37259 22 2 16.6274 2 10Z" fill="currentColor"></path>
+                                    <path d="M17.5433 9.70386C17.8448 10.4319 18 11.2122 18 12H16.2C16.2 11.4485 16.0914 10.9023 15.8803 10.3928C15.6692 9.88306 15.3599 9.42017 14.9698 9.03027C14.5798 8.64014 14.1169 8.33081 13.6073 8.11963C13.0977 7.90869 12.5515 7.80005 12 7.80005V6C12.7879 6 13.5681 6.15527 14.2961 6.45679C15.024 6.7583 15.6855 7.2002 16.2426 7.75732C16.7998 8.31445 17.2418 8.97583 17.5433 9.70386Z" fill="currentColor"></path>
+                                </svg></div>
+                        </div>
+                        <div class="col">
+                            <h2 style="color: #eb1d36;">Now access us through social media!!</h2>
+                            <p><i class="fab fa-facebook" style="font-size: 35px;color: #2b3467;"></i><a href="https://www.facebook.com/nust.csc/" target="_blank" rel="noopener noreferrer">https://www.facebook.com/nust.csc/</a></p>
+                            <p><i class="fab fa-twitter-square" style="font-size: 35px;color: #2b3467;"></i><a href="https://twitter.com/ncsc10" target="_blank" rel="noopener noreferrer">https://twitter.com/ncsc10</a></p>
+                            <p><i class="fab fa-linkedin" style="font-size: 35px;color: #2b3467;"></i><a href="https://pk.linkedin.com/company/nust-csc/" target="_blank" rel="noopener noreferrer">https://pk.linkedin.com/company/nust-csc/</a></p>
+                            <p><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor" style="font-size: 35px;color: #2b3467;">
+                                    <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                                    <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
+                                </svg><a href="https://www.instagram.com/ncsc_insta/" target="_blank" rel="noopener noreferrer">https://www.instagram.com/ncsc_insta/</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <footer data-aos="zoom-in-up" data-aos-delay="100" data-aos-once="true" id="footerpad" style="margin-top: 35px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-8 mx-auto">
+                        <p class="copyright text-muted text-center">&nbsp;© SSR 2022 | Web Design by SSR team</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/aos.min.js' %}"></script>
+    <script src="{% static 'assets/js/bs-init.js' %}"></script>
+    <script src="{% static 'assets/js/login-full-page-bs4.js' %}"></script>
+    <script src="{% static 'assets/js/login-full-page-bs4-1.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.js"></script>
+    <script src="{% static 'assets/js/Simple-Slider.js' %}"></script>
+    <script src="{% static 'assets/js/Slider_Carousel_webalgustocom.js' %}"></script>
+    <script src="{% static 'assets/js/Swipe-Slider-9.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>NCSC - About Us</title>
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="{% static 'assets/fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/aos.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Banner-Heading-Image-images.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/cards-d_style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/dh-card-image-left-dark.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Footer-with-social-media-icons.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="{% static 'assets/css/login-form---Ambrodu-login.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/login-form---Ambrodu.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/login-full-page-bs4.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Navbar-With-Button-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Pretty-Footer-.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Simple-Slider-Simple-Slider.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Simple-Vertical-Navigation-Menu-v-10.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Slider_Carousel_webalgustocom-animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Slider_Carousel_webalgustocom-slider.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Slider_Carousel_webalgustocom.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Swipe-Slider-9-Swipe-Slider-9.css' %}">
+</head>
+
+<body style="margin-bottom: -91px;">
+    <section>
+        <div class = 'container'>
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            {% block content %}{% endblock %}
+        </div>
+        <nav class="navbar navbar-light navbar-expand-md py-3" data-aos="slide-down" data-aos-once="true" style="background: #FFF5E4;">
+            <div class="container"><a class="navbar-brand d-flex align-items-center" data-aos="fade-right" data-aos-delay="250" data-aos-once="true" href="{% url 'home' %}"><img width="53" height="48" src="{% static 'assets/img/ncsc%20copy.png ' %}"><span class="fs-3 fw-semibold" style="color: #11468F;">NCSC</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link active fs-5 fw-normal" href="{% url 'home' %}" style="color:var(--bs-red);">Home</a></li>
+                        <li class="nav-item"><a class="nav-link fs-5" href="{% url 'Contact Us' %}" style="color:var(--bs-red);">Contact Us</a></li>
+                        <li class="nav-item"><a class="nav-link fs-5" href="{% url 'About Us' %}" style="color:var(--bs-red);">About Us</a></li>
+                    </ul>
+                    {% if request.user.is_authenticated %}
+                    <button class="btn btn-primary btn-lg fs-5 fw-semibold" id="signup-btn" onclick="location.href='logout/'" type="button" style="margin-right:9px;">LogOut</button>
+                    <label for="username" style="background-color: #2b3467; padding-right: 1vw;">
+                        <h4 style="color: #fff;">{{ request.user.username }}</h4>
+                    </label>
+                    {% else %}    
+                    <button class="btn btn-primary btn-lg fs-5 fw-semibold" id="signup-btn" onclick="location.href='register/'" type="button" style="margin-right:9px;">SignUp</button>
+                    <button class="btn btn-primary btn-lg fs-5 fw-normal" id="login-btn" onclick="location.href='login/'" type="button">Login</button>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+    </section>
+    <section><img data-aos="zoom-in" data-aos-once="true" src="{% static 'assets/img/blood%20donation%20about.jpg' %}" style="display: block;width: 100%;height: 100%;filter: blur(0px);z-index: -2;padding-bottom: 0px;">
+        <div class="container" data-aos="zoom-out" data-aos-once="true" style="background: #fff5e4;z-index: 2;position: relative;top: -130px;border: 8px groove #2b3467 ;">
+            <div style="/*justify-content: center;*//*align-items: center;*//*align-content: center;*/">
+                <h1 class="text-center" style="/*justify-content: center;*//*align-items: center;*/color: #eb1d36;font-style: italic;font-weight: bold;margin-bottom: 4px;margin-top: 0px;padding-top: 20px;padding-bottom: 19px;">About Us</h1>
+                <p style="color: #2b3467;padding-bottom: 53px;font-size: 20px;margin-bottom: 20px;">NUST Community Services Club (NCSC) is a non-profit and student-run, volunteer organization established for the welfare of society. It is the platform where students of NUST unite to pursue their altruistic endeavors of serving humanity and giving back to their community. We always strive for inclusion and empathy; and thus we make sure that our services and efforts are accessible to all regardless of their ethnicity, religion, disability and gender. NCSC, as it is known today, was founded on December 27, 2007, by Dr. Ijaz Ahmed Qureshi (Ex. Assistant Professor, Department of Computing – SEECS ). It is currently under the patronage of the School of Mechanical and Manufacturing Engineering (SMME), supervised by faculty sponsor Dr. Muhammad Safdar and facilitated by assistant managers, Maheen Mumtaz and Sehrish Hamid. In addition to inspiring young people to join community service, one of NCSC’s greatest objectives is to bring out and enhance leadership skills in its members. Each member of NCSC has the opportunity to lead a team and engage in the successful planning, execution, and completion of numerous events and projects.</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <footer data-aos="zoom-in-up" data-aos-delay="100" data-aos-once="true" id="footerpad" style="padding-top: 32px;padding-bottom: 64px;margin-bottom: -20px;margin-top: -109px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-8 mx-auto">
+                        <ul class="list-inline text-center">
+                            <li class="list-inline-item"><a href="https://www.facebook.com/nust.csc/" target="_blank" rel="noopener noreferrer"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></span></a></li>
+                            <li class="list-inline-item"><a href="https://twitter.com/ncsc10" target="_blank" rel="noopener noreferrer"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></a></li>
+                            <li class="list-inline-item"><a href="https://www.instagram.com/ncsc_insta/" target="_blank" rel="noopener noreferrer"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-instagram fa-stack-1x fa-inverse"></i></span></a></li>
+                            <li class="list-inline-item"><a href="https://pk.linkedin.com/company/nust-csc/" target="_blank" rel="noopener noreferrer"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-linkedin fa-stack-1x fa-inverse"></i></span></a></li>
+                        </ul>
+                        <p class="copyright text-muted text-center">&nbsp;© SSR 2022 | Web Design by SSR Team</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/aos.min.js' %}"></script>
+    <script src="{% static 'assets/js/bs-init.js' %}"></script>
+    <script src="{% static 'assets/js/login-full-page-bs4.js' %}"></script>
+    <script src="{% static 'assets/js/login-full-page-bs4-1.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.js"></script>
+    <script src="{% static 'assets/js/Simple-Slider.js' %}"></script>
+    <script src="{% static 'assets/js/Slider_Carousel_webalgustocom.js' %}"></script>
+    <script src="{% static 'assets/js/Swipe-Slider-9.js' %}"></script>
+</body>
+
+</html>t
